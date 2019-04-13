@@ -36,7 +36,7 @@ ProfessionStack.navigationOptions = {
       focused={focused}
       name={Platform.OS === 'ios' ? 'ios-laptop' : 'md-laptop'}
     />
-  ),
+  )
 };
 
 const PersonalStack = createStackNavigator({

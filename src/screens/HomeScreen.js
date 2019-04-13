@@ -14,11 +14,23 @@ import {
 import { currentGreeting } from '../utils/timeFormat';
 
 export default class HomeScreen extends React.Component {
-
+ state = {
+   msg: currentGreeting()
+ }
   static navigationOptions = {
     title: 'Home'
   };
-
+ componentDidMount() {
+    this.getTime = setInterval(() => this.setState({ msg: currentGreeting()}), 60*1000)
+ }
+ componentDidBlur() {
+    console.log("unmount")
+    clearInterval(this.getTime)
+   
+ }
+ onBlur = () => {
+   console.log("blur")
+ }
   render() {
     return (
       <View style={styles.container}>
@@ -26,7 +38,7 @@ export default class HomeScreen extends React.Component {
           <View style={styles.welcomeContainer}>
           </View>
             <View style={styles.getStartedContainer}>
-              <Text>{`Hello User, ${currentGreeting()}`}</Text>
+              <Text>{`Hello User, ${this.state.msg}`}</Text>
             </View>
         </ScrollView>
       </View>
