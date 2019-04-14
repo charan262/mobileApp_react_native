@@ -7,14 +7,19 @@ import {
   Text,
   TouchableOpacity,
   View,
+  TouchableHighlight
 } from 'react-native';
+
+import { currentGreeting } from '../utils/timeFormat';
 import HeaderNavigator from '../components/HeaderNavigator';
 
-export default class ProfessionScreen extends React.Component {
-
-  componentWillUnmount(){
-    console.log('unmount-professional')
-  }
+export default class AppInfo extends React.Component {
+ state = {
+   msg: currentGreeting()
+ }
+  static navigationOptions = {
+    title: 'App Info'
+  };
   render() {
     return (
       <View style={{
@@ -24,11 +29,11 @@ export default class ProfessionScreen extends React.Component {
 
         <HeaderNavigator {...this.props}/>
         <View>
-          <Text>Hello this is Professional Screen</Text>
+          <Text>Hello this is AppInfo Screen</Text>
         </View>
 
     </View>
-    );
+    )
   }
 }
 

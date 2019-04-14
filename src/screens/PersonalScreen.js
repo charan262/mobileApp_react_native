@@ -12,25 +12,23 @@ import {
 
 // import { MonoText } from '../components/StyledText';
 import { currentGreeting } from '../utils/timeFormat';
+import HeaderNavigator from '../components/HeaderNavigator';
 
 export default class PersonalScreen extends React.Component {
 
-  static navigationOptions = {
-    title: 'Personal Info'
-  };
-
   render() {
     return (
-      <View style={styles.container}>
-        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-          {/* <View style={styles.welcomeContainer}>
-          </View>
-            <View style={styles.getStartedContainer}>
-              <MonoText>{`Hello User, ${currentGreeting()}`}</MonoText>
-            </View> */}
-            <Text>Hello Personal Screen</Text>
-        </ScrollView>
-      </View>
+      <View style={{
+        flex: 1,
+        flexDirection: 'column',
+    }}>
+
+        <HeaderNavigator {...this.props}/>
+        <View>
+          <Text>Hello this is Personal Screen</Text>
+        </View>
+
+    </View>
     );
   }
 }

@@ -7,42 +7,39 @@ import {
   Text,
   TouchableOpacity,
   View,
+  TouchableHighlight
 } from 'react-native';
 
-
-// import { MonoText } from '../components/StyledText';
 import { currentGreeting } from '../utils/timeFormat';
+import HeaderNavigator from '../components/HeaderNavigator';
+import { withNavigationFocus } from 'react-navigation';
 
-export default class HomeScreen extends React.Component {
- state = {
-   msg: currentGreeting()
- }
-  static navigationOptions = {
-    title: 'Home'
-  };
- componentDidMount() {
-    this.getTime = setInterval(() => this.setState({ msg: currentGreeting()}), 60*1000)
- }
- componentDidBlur() {
-    console.log("unmount")
-    clearInterval(this.getTime)
-   
- }
- onBlur = () => {
-   console.log("blur")
- }
+class HomeScreen extends React.Component {
+  state = {
+    msg: currentGreeting()
+  }
+  // static navigationOptions = {
+  //   headerMode: 'none',
+  //   navigationOptions: {
+  //       headerVisible: false,
+  //   }
+  // };
+
   render() {
     return (
-      <View style={styles.container}>
-        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-          <View style={styles.welcomeContainer}>
-          </View>
-            <View style={styles.getStartedContainer}>
-              <Text>{`Hello User, ${this.state.msg}`}</Text>
-            </View>
-        </ScrollView>
+      <View style={{
+        flex: 1,
+        flexDirection: 'column',
+      }}>
+        <HeaderNavigator {...this.props} />
+        <View>
+          <Text>Hello this is Home Screen</Text>
+        </View>
+        <View>
+          <Text>{this.props.isFocused ? 'Focused' : 'Not focused'}</Text>
+        </View>
       </View>
-    );
+    )
   }
 }
 
@@ -72,3 +69,5 @@ const styles = StyleSheet.create({
     marginHorizontal: 50,
   }
 });
+
+export default withNavigationFocus(HomeScreen)
