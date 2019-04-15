@@ -52,22 +52,22 @@ const styles = StyleSheet.create({
   textInput: {
     height: 40,
     width: 240,
-    borderColor: '#fff',
+    borderColor: Colors.whiteColor,
     borderWidth: 1,
     marginBottom: 10,
     padding: 10,
-    backgroundColor: '#fff',
+    backgroundColor: Colors.whiteColor,
     borderRadius: 4
   },
   button: {
     alignItems: 'center',
     backgroundColor: Colors.tintColor,
-    borderColor: '#fff',
+    borderColor: Colors.whiteColor,
     borderWidth: 1,
     padding: 10,
     height: 40,
     width: 240,
-    backgroundColor:'#fff',
+    backgroundColor:Colors.whiteColor,
     borderRadius: 4
   },
 })

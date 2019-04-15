@@ -1,5 +1,5 @@
 const tintColor = '#5F9EA0';
-
+const white = "#fff"
 export default {
   tintColor,
   tabIconDefault: '#ccc',
@@ -10,5 +10,8 @@ export default {
   warningBackground: '#EAEB5E',
   warningText: '#666804',
   noticeBackground: tintColor,
-  noticeText: '#fff',
+  noticeText: white,
+  whiteColor: white,
+  blackColor: '#000000'
+  
 };
