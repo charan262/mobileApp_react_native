@@ -63,9 +63,7 @@ const DrawerContent = (props) => {
                     justifyContent: 'center',
                 }}>
                 <Image style={{ width: 80, height: 80 }} source={require('../constants/assets/charanImage.png')} />
-                <Text style={{ color: 'white', fontSize: 20 }}>
-                    Charan Maddi
-            </Text>
+                <Text style={{ color: 'white', fontSize: 20 }}>Charan Maddi</Text>
             </View>
             <DrawerItems {...props}
                 onItemPress={
