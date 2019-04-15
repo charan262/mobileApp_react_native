@@ -12,24 +12,22 @@ import {
 
 import { currentGreeting } from '../utils/timeFormat';
 import HeaderNavigator from '../components/HeaderNavigator';
-import { withNavigationFocus } from 'react-navigation';
 
-class HomeScreen extends React.Component {
-  state = {
-    msg: currentGreeting()
-  }
+export default class Logout extends React.Component {
 
   render() {
     return (
       <View style={{
         flex: 1,
         flexDirection: 'column',
-      }}>
-        <HeaderNavigator {...this.props} />
+    }}>
+
+        <HeaderNavigator {...this.props}/>
         <View>
-          <Text>Hello this is Home Screen</Text>
+          <Text>Logout to be developed</Text>
         </View>
-      </View>
+
+    </View>
     )
   }
 }
@@ -60,5 +58,3 @@ const styles = StyleSheet.create({
     marginHorizontal: 50,
   }
 });
-
-export default withNavigationFocus(HomeScreen)

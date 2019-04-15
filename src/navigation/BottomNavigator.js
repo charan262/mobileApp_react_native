@@ -6,7 +6,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import ProfessionScreen from '../screens/ProfessionScreen';
 import PersonalScreen from '../screens/PersonalScreen';
-import AppInfo from '../screens/AppInfo';
+import Colors from '../constants/Colors';
 
 const HomeStack = createStackNavigator({ Home: HomeScreen },
   {
@@ -21,14 +21,17 @@ const HomeStack = createStackNavigator({ Home: HomeScreen },
               : 'md-home'
           }
         />
-      )
+      ),
+      tabBarOptions: {
+        activeTintColor: Colors.tintColor,
+      }
     },
     headerMode: 'none',
     headerVisible: false
   }
 );
 
-const ProfessionStack = createStackNavigator({Profession: ProfessionScreen }, {
+const ProfessionStack = createStackNavigator({ Profession: ProfessionScreen }, {
   navigationOptions : {
     tabBarLabel: 'Profession',
     tabBarIcon: ({ focused }) => (
@@ -36,7 +39,10 @@ const ProfessionStack = createStackNavigator({Profession: ProfessionScreen }, {
         focused={focused}
         name={Platform.OS === 'ios' ? 'ios-laptop' : 'md-laptop'}
       />
-    )
+    ),
+    tabBarOptions: {
+      activeTintColor: Colors.tintColor,
+    }
   },
   headerMode: 'none',
   headerVisible: false
@@ -51,6 +57,9 @@ const PersonalStack = createStackNavigator({ Personal: PersonalScreen }, {
         name={Platform.OS === 'ios' ? 'ios-cafe' : 'md-cafe'}
       />
     ),
+    tabBarOptions: {
+      activeTintColor: Colors.tintColor,
+    }
   },
   headerMode: 'none',
   headerVisible: false

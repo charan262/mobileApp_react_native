@@ -1,19 +1,71 @@
 import React from 'react';
-import { Platform } from 'react-native';
-import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
+import { Platform, View, Text, Image } from 'react-native';
+import { createStackNavigator, createDrawerNavigator, DrawerItems } from 'react-navigation';
 import TabBarIcon from '../components/TabBarIcon';
 
-import AppInfo from '../screens/AppInfo'
-
+import AppInfo from '../screens/AppInfo';
+import LogoutScreen from '../screens/Logout';
 import BottomTabNavigator from './BottomNavigator';
+import Colors from '../constants/Colors';
+
 export default createDrawerNavigator({
-    Home: {
-        screen: BottomTabNavigator
+    'Home': {
+        screen: BottomTabNavigator,
+        navigationOptions: {
+            drawerIcon: ({ focused }) => (
+                <TabBarIcon
+                    focused = {focused}
+                    name={Platform.OS === 'ios' ? 'ios-home' : 'md-home'}
+                />
+            )
+        }
     },
-    App: {
-        screen: AppInfo
+    'App Info': {
+        screen: AppInfo,
+        navigationOptions: {
+            drawerIcon: ({ focused }) => (
+                <TabBarIcon
+                    focused = {focused}
+                    name={Platform.OS === 'ios' ? 'ios-information-circle-outline' : 'md-information-circle-outline'}
+                />
+            )
+        }
     },
+    'Logout': {
+        screen: LogoutScreen,
+        navigationOptions: {
+            drawerIcon: ({ focused }) => (
+                <TabBarIcon
+                    focused = {focused}
+                    name={Platform.OS === 'ios' ? 'ios-log-out' : 'md-log-out'}
+                />
+            )
+        }
+    }
 }, {
-        initialRouteName: 'Home'
+        initialRouteName: 'Home',
+        contentComponent: props => <DrawerContent {...props} />,
+        contentOptions: {
+            activeTintColor: Colors.tintColor
+        }
     }
 );
+
+const DrawerContent = (props) => (
+    <View>
+        <View
+            style={{
+                backgroundColor: '#5F9EA0',
+                height: 140,
+                alignItems: 'center',
+                justifyContent: 'center',
+            }}
+        >
+            <Image style={{ width: 80, height: 80 }} source={require('../constants/assets/charanImage.png')} />
+            <Text style={{ color: 'white', fontSize: 20 }}>
+                Charan Maddi
+        </Text>
+        </View>
+        <DrawerItems {...props} />
+    </View>
+)

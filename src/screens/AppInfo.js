@@ -14,12 +14,7 @@ import { currentGreeting } from '../utils/timeFormat';
 import HeaderNavigator from '../components/HeaderNavigator';
 
 export default class AppInfo extends React.Component {
- state = {
-   msg: currentGreeting()
- }
-  static navigationOptions = {
-    title: 'App Info'
-  };
+
   render() {
     return (
       <View style={{
