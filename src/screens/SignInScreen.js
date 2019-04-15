@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Button, AsyncStorage, StyleSheet, TextInput, Dimensions, TouchableOpacity } from 'react-native';
+import { Text, View, Button, AsyncStorage, StyleSheet, TextInput, Dimensions, TouchableOpacity, StatusBar, Platform } from 'react-native';
 import Colors from '../constants/Colors';
 export default class SignIn extends React.Component {
 
@@ -22,7 +22,6 @@ export default class SignIn extends React.Component {
                     onChangeText={(text) => this.setState({uName:text})}
                     onBlur = {this.onBlurText}
                     value={this.state.uName}
-                    placeholderTextColor={Colors.tintColor}
                 />
                  <TextInput
                     style={styles.textInput}
@@ -30,13 +29,11 @@ export default class SignIn extends React.Component {
                     onChangeText={(text) => this.setState({pswd:text})}
                     value={this.state.pswd}
                     secureTextEntry
-                    placeholderTextColor={Colors.tintColor}
                 />
                </View>
                 <TouchableOpacity style = {styles.button} onPress={this.proceedSignIn}>
                    <Text style= {{ color: Colors.tintColor }}>LOGIN</Text>
                 </TouchableOpacity>
-                <Text>{this.state.pswd}</Text>
             </View>
         )
     }
