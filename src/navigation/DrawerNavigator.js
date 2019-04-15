@@ -1,10 +1,10 @@
 import React from 'react';
-import { Platform, View, Text, Image } from 'react-native';
+import { Platform, View, Text, Image, Alert } from 'react-native';
 import { createStackNavigator, createDrawerNavigator, DrawerItems } from 'react-navigation';
 import TabBarIcon from '../components/TabBarIcon';
 
 import AppInfo from '../screens/AppInfo';
-import LogoutScreen from '../screens/Logout';
+import LogoutScreen from '../screens/SignOutScreen';
 import BottomTabNavigator from './BottomNavigator';
 import Colors from '../constants/Colors';
 
@@ -14,7 +14,7 @@ export default createDrawerNavigator({
         navigationOptions: {
             drawerIcon: ({ focused }) => (
                 <TabBarIcon
-                    focused = {focused}
+                    focused={focused}
                     name={Platform.OS === 'ios' ? 'ios-home' : 'md-home'}
                 />
             )
@@ -25,47 +25,62 @@ export default createDrawerNavigator({
         navigationOptions: {
             drawerIcon: ({ focused }) => (
                 <TabBarIcon
-                    focused = {focused}
+                    focused={focused}
                     name={Platform.OS === 'ios' ? 'ios-information-circle-outline' : 'md-information-circle-outline'}
                 />
             )
         }
     },
     'Logout': {
-        screen: LogoutScreen,
+        screen: 'Logout',
         navigationOptions: {
             drawerIcon: ({ focused }) => (
                 <TabBarIcon
-                    focused = {focused}
+                    focused={focused}
                     name={Platform.OS === 'ios' ? 'ios-log-out' : 'md-log-out'}
                 />
-            )
+            ),
         }
     }
 }, {
         initialRouteName: 'Home',
         contentComponent: props => <DrawerContent {...props} />,
         contentOptions: {
-            activeTintColor: Colors.tintColor
+            activeTintColor: Colors.tintColor,
         }
     }
 );
 
-const DrawerContent = (props) => (
-    <View>
-        <View
-            style={{
-                backgroundColor: '#5F9EA0',
-                height: 140,
-                alignItems: 'center',
-                justifyContent: 'center',
-            }}
-        >
-            <Image style={{ width: 80, height: 80 }} source={require('../constants/assets/charanImage.png')} />
-            <Text style={{ color: 'white', fontSize: 20 }}>
-                Charan Maddi
-        </Text>
+const DrawerContent = (props) => {
+    
+    return (
+        <View>
+            <View
+                style={{
+                    backgroundColor: '#5F9EA0',
+                    height: 140,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                }}>
+                <Image style={{ width: 80, height: 80 }} source={require('../constants/assets/charanImage.png')} />
+                <Text style={{ color: 'white', fontSize: 20 }}>
+                    Charan Maddi
+            </Text>
+            </View>
+            <DrawerItems {...props}
+                onItemPress={
+                    (route, focused) => {
+                        if (route.route.routeName !== 'Logout') {
+                            props.onItemPress(route);
+                            return;
+                        }
+                        console.log(route)
+                        Alert.alert('Alert Title', 'My Alert Msg', [{ text: 'OK', onPress: () => console.log(this.props)}])
+                    }
+
+                } />
         </View>
-        <DrawerItems {...props} />
-    </View>
-)
+    )
+}
+    
+
