@@ -1,16 +1,26 @@
 import React from 'react';
 import { Text, View, Button, AsyncStorage, StyleSheet, TextInput, Dimensions, TouchableOpacity, StatusBar, Platform } from 'react-native';
 import Colors from '../constants/Colors';
-export default class SignIn extends React.Component {
+import {connect} from 'react-redux';
+import { login } from '../redux/actions/AuthAction';
+import { bindActionCreators } from 'redux';
 
+
+class SignIn extends React.Component {
     state = {
         uName : null,
         pswd: null
     }
 
+    static getDerivedStateFromProps(nextProps) {
+        if(nextProps.auth) {
+            nextProps.navigation.navigate('App');
+        }
+        return null;
+    }
+
     proceedSignIn = async() => {
-        // await AsyncStorage.setItem('userToken', this.state.uName);
-        this.props.navigation.navigate('App');
+        await this.props.login(this.state.uName, this.state.pswd);
     }
     render() {
         return (
@@ -68,3 +78,15 @@ const styles = StyleSheet.create({
     borderRadius: 4
   },
 })
+
+const mapStateToProps = state => {
+    return {
+        auth: state.auth
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return bindActionCreators({ login },dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn)
