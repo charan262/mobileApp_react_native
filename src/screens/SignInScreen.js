@@ -1,28 +1,33 @@
 import React from 'react';
 import { Text, View, Button, AsyncStorage, StyleSheet, TextInput, Dimensions, TouchableOpacity, StatusBar, Platform } from 'react-native';
 import Colors from '../constants/Colors';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import { login } from '../redux/actions/AuthAction';
 import { bindActionCreators } from 'redux';
-
+import { Spinner } from '../components/Spinner';
 
 class SignIn extends React.Component {
     state = {
         uName : null,
-        pswd: null
+        pswd: null,
+        error: ''
     }
 
     static getDerivedStateFromProps(nextProps) {
-        if(nextProps.auth) {
+         if(nextProps.auth) {
             nextProps.navigation.navigate('App');
-        }
-        return null;
+        } 
+        return null
     }
 
-    proceedSignIn = async() => {
-        await this.props.login(this.state.uName, this.state.pswd);
+    proceedSignIn = () => {
+        this.props.login(this.state.uName, this.state.pswd);
+    }
+    clearErrorMsg = () => {
+        this.setState({ errorMsg: ''})
     }
     render() {
+        const { authLoading } = this.props;
         return (
             <View style={styles.container}>
                <View>
@@ -30,8 +35,8 @@ class SignIn extends React.Component {
                     style={styles.textInput}
                     placeholder='Enter word - testUser'
                     onChangeText={(text) => this.setState({uName:text})}
-                    onBlur = {this.onBlurText}
                     value={this.state.uName}
+                    onFocus={this.clearErrorMsg}
                 />
                  <TextInput
                     style={styles.textInput}
@@ -39,11 +44,14 @@ class SignIn extends React.Component {
                     onChangeText={(text) => this.setState({pswd:text})}
                     value={this.state.pswd}
                     secureTextEntry
+                    onFocus={this.clearErrorMsg}
                 />
                </View>
-                <TouchableOpacity style = {styles.button} onPress={this.proceedSignIn}>
-                   <Text style= {{ color: Colors.tintColor }}>LOGIN</Text>
+                <TouchableOpacity disabled={authLoading} style = {styles.button} onPress={this.proceedSignIn}>
+                   {authLoading ? <Spinner size='small'/>:<Text style= {{ color: Colors.tintColor }}>LOGIN</Text>}
                 </TouchableOpacity>
+
+                <Text>{this.props.errorMsg}</Text>
             </View>
         )
     }
@@ -81,7 +89,9 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = state => {
     return {
-        auth: state.auth
+        auth: state.authLevel.validAuth.authCheck,
+        errorMsg: state.authLevel.validAuth.error,
+        authLoading: state.authLevel.authProgress
     }
 }
 

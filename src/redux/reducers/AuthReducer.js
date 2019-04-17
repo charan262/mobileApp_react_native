@@ -1,13 +1,14 @@
 import { AsyncStorage } from 'react-native';
-
-let initialState = {
-    validAuth : null
+const initialState = {
+    validAuth: { authCheck : null, error: null },
+    authProgress: false
 }
-
-export const auth = (state='', action) => {
+export const auth = (state = initialState, action) => {
     switch (action.type) {
         case 'VALID_AUTH':
-            return action.payload
+            return { ...state, validAuth: action.payload }
+        case 'AUTH_IN_PROGRESS':
+            return {...state, authProgress: action.payload }
         default:
             return state;
     }
