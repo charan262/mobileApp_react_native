@@ -12,6 +12,11 @@ const authInProgress = payload => ({
   payload
 })
 
+export const removeError = payload => ({
+  type: 'REMOVE_ERROR',
+  payload
+})
+
 export const login = (uName, pswd) => dispatch => {
   dispatch(authInProgress(true))
   if (uName === USER_NAME && pswd === PASSWORD) {
