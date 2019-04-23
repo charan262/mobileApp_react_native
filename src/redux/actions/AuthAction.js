@@ -1,4 +1,4 @@
-import { USER_NAME, PASSWORD } from "../../constants/Strings";
+import Strings from "../../constants/Strings";
 
 const validAuth = payload => (
   {
@@ -19,7 +19,7 @@ export const removeError = payload => ({
 
 export const login = (uName, pswd) => dispatch => {
   dispatch(authInProgress(true))
-  if (uName === USER_NAME && pswd === PASSWORD) {
+  if (uName === Strings.USER_NAME && pswd === Strings.PASSWORD) {
     setTimeout(() => {
       dispatch(authInProgress(false))
       dispatch(validAuth({ authCheck: true, error: ''}));

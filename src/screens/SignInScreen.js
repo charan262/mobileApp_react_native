@@ -20,7 +20,7 @@ class SignIn extends React.Component {
     }
 
     proceedSignIn = () => {
-        this.props.login(this.state.uName, this.state.pswd);
+        this.props.login('testUser', 'testPassword');
     }
     clearErrorMsg = () => {
          this.props.removeError()

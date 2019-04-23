@@ -5,7 +5,7 @@ import TabBarIcon from './TabBarIcon';
 
 const ImgButton = (props) => {
     return (
-        <TouchableOpacity style={styles.buttonStyles} onPress={props.onPress}>
+        <TouchableOpacity style={props.style ? {...styles.buttonStyles, ...props.style} : styles.buttonStyles} onPress={props.onPress}>
                 {props.buttonImage ? <TabBarIcon name={props.name} /> : null}
                 <Text style={styles.buttonTextStyle}>{props.buttonName}</Text>
         </TouchableOpacity>
@@ -19,7 +19,9 @@ const styles = {
         alignItems: 'center',
         flexDirection: 'row',
         backgroundColor: Colors.tintColor,
-        borderRadius:4
+        borderRadius:4,
+        borderWidth: 2,
+        borderColor: Colors.tabIconDefault,
     },
     buttonTextStyle: {
         color: Colors.whiteColor, 

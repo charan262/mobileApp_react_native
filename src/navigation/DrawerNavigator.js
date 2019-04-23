@@ -4,7 +4,7 @@ import { createStackNavigator, createDrawerNavigator, DrawerItems } from 'react-
 import TabBarIcon from '../components/TabBarIcon';
 
 import AppInfo from '../screens/AppInfo';
-import LogoutScreen from '../screens/SignOutScreen';
+import Feedback from '../screens/SignOutScreen';
 import BottomTabNavigator from './BottomNavigator';
 import Colors from '../constants/Colors';
 
@@ -31,13 +31,13 @@ export default createDrawerNavigator({
             )
         }
     },
-    'Logout': {
-        screen: 'Logout',
+    'Feedback': {
+        screen: Feedback,
         navigationOptions: {
             drawerIcon: ({ focused }) => (
                 <TabBarIcon
                     focused={focused}
-                    name={Platform.OS === 'ios' ? 'ios-log-out' : 'md-log-out'}
+                    name={Platform.OS === 'ios' ? 'ios-text' : 'md-text'}
                 />
             ),
         }
@@ -52,7 +52,6 @@ export default createDrawerNavigator({
 );
 
 const DrawerContent = (props) => {
-    
     return (
         <View>
             <View
@@ -75,8 +74,8 @@ const DrawerContent = (props) => {
                         console.log(route)
                         Alert.alert('Alert Title', 'My Alert Msg', [{ text: 'OK', onPress: () => console.log(this.props)}])
                     }
-
-                } />
+                }
+                 />
         </View>
     )
 }
