@@ -43,6 +43,7 @@ export default class FeedbackScreen extends React.Component {
                         buttonImage={true}
                         btnStyle={styles.buttonStyle(this.state.btnEnable1)}
                         btnTextStyle={this.state.btnEnable1 ? { color: Colors.whiteColor}:{color: Colors.tintColor}}
+                        focused={!this.state.btnEnable1}
                         name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'}
                         buttonName='Like'
                         onPress={this.onBtnClick1} 
@@ -51,6 +52,7 @@ export default class FeedbackScreen extends React.Component {
                         buttonImage={true}
                         btnStyle={styles.buttonStyle(this.state.btnEnable2)}
                         btnTextStyle={this.state.btnEnable2 ? { color: Colors.whiteColor}:{color: Colors.tintColor}}
+                        focused={!this.state.btnEnable2}
                         name={Platform.OS === 'ios' ? 'ios-heart-dislike' : 'md-heart-dislike'}
                         buttonName='Dislike'
                         onPress={this.onBtnClick2} 
