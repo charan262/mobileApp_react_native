@@ -66,7 +66,7 @@ export default class FeedbackScreen extends React.Component {
                         returnKeyType = "done"
                     />
                 </View >
-                <View style={{ marginLeft: width/4, marginTop: 20 }}>
+                <View style={{ marginLeft: width*0.23, marginTop: 20 }}>
                     <ImgButton
                         buttonName='SUBMIT'
                      />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Platform, TouchableOpacity } from 'react-native';
+import { View, Text, Platform, TouchableOpacity, Dimensions } from 'react-native';
 import Colors from '../constants/Colors';
 import TabBarIcon from './TabBarIcon';
 
@@ -14,7 +14,7 @@ const ImgButton = (props) => {
 const styles = {
     buttonStyles: {
         height: 60,
-        width: 200,
+        width:  Dimensions.get('window').width*0.6,
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'row',
