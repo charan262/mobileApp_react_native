@@ -32,6 +32,7 @@ export default class FeedbackScreen extends React.Component {
         this.setState({ btnEnable2: !this.state.btnEnable2, btnEnable1: false })
     }
     render() {
+        const { width, height } = Dimensions.get('window');
         return (
             <View style={styles.container}>
                 <HeaderNavigator {...this.props} />
@@ -55,16 +56,17 @@ export default class FeedbackScreen extends React.Component {
                         onPress={this.onBtnClick2} 
                     />
                 </View>
-                <View style={{ marginLeft: 18, marginTop: 20 }}>
+                <View style={{ marginLeft: width/16, marginTop: 20 }}>
                     <TextInput
                         multiline = {true}
                         numberOfLines = {4}
                         textAlignVertical = 'top'
                         style={styles.textInputStyle}
                         placeholder='Type feedback...'
+                        returnKeyType = "done"
                     />
                 </View >
-                <View style={{ marginLeft: 100, marginTop: 20 }}>
+                <View style={{ marginLeft: width/4, marginTop: 20 }}>
                     <ImgButton
                         buttonName='SUBMIT'
                      />
@@ -81,16 +83,14 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.whiteColor,
     },
     contentContainer: {
-        // flex: 2,
-        // justifyContent: 'center',
-        // alignItems: 'center',
+        alignSelf: 'center',
         flexDirection: 'row',
     },
     buttonStyle: (btnColor) => ({
         height: 100,
-        width: 170,
-        marginLeft: 16,
+        width: Dimensions.get('window').width/2.2,
         backgroundColor: btnColor ? Colors.tintColor : null, 
+        marginLeft: 8
     }),
     versionStyle: {
         color: Colors.tintColor,
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     },
     textInputStyle: {
         height: 100,
-        width: '94%',
+        width: Dimensions.get('window').width/1.12,
         borderWidth: 1,
         borderColor: Colors.tabIconDefault,        
     }
