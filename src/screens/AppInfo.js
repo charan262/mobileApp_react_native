@@ -34,7 +34,7 @@ export default class AppInfo extends React.Component {
         <View style={styles.contentContainer}>
           <ImgButton
             buttonImage={true}
-            style={styles.buttonStyle}
+            btnStyle={styles.buttonStyle}
             name='logo-github'
             buttonName='Github Source File'
             onPress={this.canOpenUrl} />

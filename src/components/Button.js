@@ -5,9 +5,9 @@ import TabBarIcon from './TabBarIcon';
 
 const ImgButton = (props) => {
     return (
-        <TouchableOpacity style={props.style ? {...styles.buttonStyles, ...props.style} : styles.buttonStyles} onPress={props.onPress}>
+        <TouchableOpacity style={props.btnStyle ? {...styles.buttonStyles, ...props.btnStyle} : styles.buttonStyles} onPress={props.onPress}>
                 {props.buttonImage ? <TabBarIcon name={props.name} /> : null}
-                <Text style={styles.buttonTextStyle}>{props.buttonName}</Text>
+                <Text style={props.btnTextStyle ? {...styles.buttonTextStyle, ...props.btnTextStyle}: styles.buttonTextStyle}>{props.buttonName}</Text>
         </TouchableOpacity>
     )
 }

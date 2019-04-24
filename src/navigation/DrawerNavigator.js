@@ -4,7 +4,7 @@ import { createStackNavigator, createDrawerNavigator, DrawerItems } from 'react-
 import TabBarIcon from '../components/TabBarIcon';
 
 import AppInfo from '../screens/AppInfo';
-import Feedback from '../screens/SignOutScreen';
+import Feedback from '../screens/FeedbackScreen';
 import BottomTabNavigator from './BottomNavigator';
 import Colors from '../constants/Colors';
 
