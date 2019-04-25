@@ -35,7 +35,6 @@ export default class FeedbackScreen extends React.Component {
         const { width, height } = Dimensions.get('window');
         return (
             <View style={styles.container}>
-                <HeaderNavigator {...this.props} />
                 <View style={{ flexDirection: 'column' }}>
                 <Text style={{padding: 14, color: Colors.tintColor, fontFamily: Strings.textFontFamily, fontSize: 20 }}>What do you think of my App?</Text>
                 <View style={styles.contentContainer}>

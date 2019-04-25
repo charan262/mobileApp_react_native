@@ -30,7 +30,7 @@ export default class AppInfo extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <HeaderNavigator {...this.props} />
+        {/* <HeaderNavigator {...this.props} /> */}
         <View style={styles.contentContainer}>
           <ImgButton
             buttonImage={true}

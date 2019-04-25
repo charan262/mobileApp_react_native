@@ -1,27 +1,78 @@
 import React from 'react';
 import { Platform, View, Text, Image, Alert } from 'react-native';
-import { createStackNavigator, createDrawerNavigator, DrawerItems } from 'react-navigation';
+import { createStackNavigator, createDrawerNavigator, DrawerItems, NavigationActions } from 'react-navigation';
 import TabBarIcon from '../components/TabBarIcon';
 
 import AppInfo from '../screens/AppInfo';
 import Feedback from '../screens/FeedbackScreen';
 import BottomTabNavigator from './BottomNavigator';
 import Colors from '../constants/Colors';
+import HeaderNavigator from '../components/HeaderNavigator';
+import SignInScreen from '../screens/SignInScreen';
+
+export const AuthStack = createStackNavigator({ 
+    'Login': {
+        screen: SignInScreen,
+    }
+  }, { 
+      headerMode: 'none', headerVisible: false 
+})
+
+const HomeNavigator = createStackNavigator({
+    'HomeInfo': {
+        screen: BottomTabNavigator,
+        navigationOptions: ({ navigation }) => ({
+            title:'Home',
+            headerLeft: <HeaderNavigator navigation={navigation}/>
+        })
+    },
+})
+
+const AppNavigator = createStackNavigator({
+    'AppInfo': {
+        screen: AppInfo,
+        navigationOptions: ({ navigation }) => ({
+            title:'App Info',
+            headerLeft: <HeaderNavigator navigation={navigation}/>
+        })
+    },
+})
+
+const FeedbackNavigator = createStackNavigator({
+    'FeedbackInfo': {
+        screen: Feedback,
+        navigationOptions: ({ navigation }) => ({
+            title:'Feedback',
+            headerLeft: <HeaderNavigator navigation={navigation}/>
+
+        })
+    },
+})
+
+const LogoutNavigator = createStackNavigator({
+    'LogoutInfo': {
+        screen: 'Logout',
+        navigationOptions: ({ navigation }) => ({
+            // headerLeft: <HeaderNavigator navigation={navigation}/>
+
+        })
+    },
+})
 
 export default createDrawerNavigator({
     'Home': {
-        screen: BottomTabNavigator,
+        screen: HomeNavigator,
         navigationOptions: {
             drawerIcon: ({ focused }) => (
                 <TabBarIcon
                     focused={focused}
                     name={Platform.OS === 'ios' ? 'ios-home' : 'md-home'}
                 />
-            )
+            ),
         }
     },
     'App Info': {
-        screen: AppInfo,
+        screen: AppNavigator,
         navigationOptions: {
             drawerIcon: ({ focused }) => (
                 <TabBarIcon
@@ -32,7 +83,18 @@ export default createDrawerNavigator({
         }
     },
     'Feedback': {
-        screen: Feedback,
+        screen: FeedbackNavigator,
+        navigationOptions: {
+            drawerIcon: ({ focused }) => (
+                <TabBarIcon
+                    focused={focused}
+                    name={Platform.OS === 'ios' ? 'ios-text' : 'md-text'}
+                />
+            ),
+        }
+    },
+    'Logout': {
+        screen: LogoutNavigator,
         navigationOptions: {
             drawerIcon: ({ focused }) => (
                 <TabBarIcon
@@ -71,8 +133,8 @@ const DrawerContent = (props) => {
                             props.onItemPress(route);
                             return;
                         }
-                        console.log(route)
-                        Alert.alert('Alert Title', 'My Alert Msg', [{ text: 'OK', onPress: () => console.log(this.props)}])
+                        console.log(props)
+                        Alert.alert('Alert Title', 'My Alert Msg', [{ text: 'OK', onPress: () => props.navigation.navigate('Auth')}])
                     }
                 }
                  />

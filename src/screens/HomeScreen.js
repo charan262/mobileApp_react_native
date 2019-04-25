@@ -25,7 +25,6 @@ class HomeScreen extends React.Component {
         flex: 1,
         flexDirection: 'column',
       }}>
-        <HeaderNavigator {...this.props} />
         <View>
           <Text>Hello this is Home Screen</Text>
         </View>

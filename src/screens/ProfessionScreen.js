@@ -21,8 +21,6 @@ export default class ProfessionScreen extends React.Component {
         flex: 1,
         flexDirection: 'column',
     }}>
-
-        <HeaderNavigator {...this.props}/>
         <View>
           <Text>Hello this is Professional Screen</Text>
         </View>

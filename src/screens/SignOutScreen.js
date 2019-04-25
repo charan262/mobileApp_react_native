@@ -21,8 +21,6 @@ export default class Logout extends React.Component {
         flex: 1,
         flexDirection: 'column',
     }}>
-
-        <HeaderNavigator {...this.props}/>
         <View>
           <Text>Logout to be developed</Text>
         </View>

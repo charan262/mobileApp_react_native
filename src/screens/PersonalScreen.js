@@ -22,8 +22,6 @@ export default class PersonalScreen extends React.Component {
         flex: 1,
         flexDirection: 'column',
     }}>
-
-        <HeaderNavigator {...this.props}/>
         <View>
           <Text>Hello this is Personal Screen</Text>
         </View>
