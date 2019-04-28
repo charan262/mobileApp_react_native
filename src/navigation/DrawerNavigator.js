@@ -9,21 +9,22 @@ import BottomTabNavigator from './BottomNavigator';
 import Colors from '../constants/Colors';
 import HeaderNavigator from '../components/HeaderNavigator';
 import SignInScreen from '../screens/SignInScreen';
+import { AvatarImg } from '../components/Avatar';
 
-export const AuthStack = createStackNavigator({ 
+export const AuthStack = createStackNavigator({
     'Login': {
         screen: SignInScreen,
     }
-  }, { 
-      headerMode: 'none', headerVisible: false 
-})
+}, {
+        headerMode: 'none', headerVisible: false
+    })
 
 const HomeNavigator = createStackNavigator({
     'HomeInfo': {
         screen: BottomTabNavigator,
         navigationOptions: ({ navigation }) => ({
-            title:'Home',
-            headerLeft: <HeaderNavigator navigation={navigation}/>
+            title: 'Home',
+            headerLeft: <HeaderNavigator navigation={navigation} />
         })
     },
 })
@@ -32,8 +33,8 @@ const AppNavigator = createStackNavigator({
     'AppInfo': {
         screen: AppInfo,
         navigationOptions: ({ navigation }) => ({
-            title:'App Info',
-            headerLeft: <HeaderNavigator navigation={navigation}/>
+            title: 'App Info',
+            headerLeft: <HeaderNavigator navigation={navigation} />
         })
     },
 })
@@ -42,8 +43,8 @@ const FeedbackNavigator = createStackNavigator({
     'FeedbackInfo': {
         screen: Feedback,
         navigationOptions: ({ navigation }) => ({
-            title:'Feedback',
-            headerLeft: <HeaderNavigator navigation={navigation}/>
+            title: 'Feedback',
+            headerLeft: <HeaderNavigator navigation={navigation} />
 
         })
     },
@@ -123,7 +124,12 @@ const DrawerContent = (props) => {
                     alignItems: 'center',
                     justifyContent: 'center',
                 }}>
-                <Image style={{ width: 80, height: 80 }} source={require('../constants/assets/charanImage.png')} />
+                <AvatarImg
+                    source={require('../constants/assets/charan.jpg')}
+                    containerStyle={{ width: 80, height: 80 }}
+                    showEdit = {true}
+                    rounded = {true}
+                    size="large" />
                 <Text style={{ color: 'white', fontSize: 20 }}>Charan Maddi</Text>
             </View>
             <DrawerItems {...props}
@@ -137,9 +143,9 @@ const DrawerContent = (props) => {
                         Alert.alert('Alert Title', 'My Alert Msg', [{ text: 'OK', onPress: () => props.navigation.navigate('Auth') }])
                     }
                 }
-                 />
+            />
         </View>
     )
 }
-    
+
 

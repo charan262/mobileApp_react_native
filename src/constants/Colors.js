@@ -13,4 +13,5 @@ export default {
   noticeText: white,
   whiteColor: white,
   blackColor: '#000000',
+  grayColor:'#808080'
 };

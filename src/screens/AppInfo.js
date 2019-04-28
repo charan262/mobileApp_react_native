@@ -11,7 +11,6 @@ import {
   Linking
 } from 'react-native';
 
-import HeaderNavigator from '../components/HeaderNavigator';
 import Colors from '../constants/Colors';
 import { ImgButton } from '../components/Button';
 import Strings from '../constants/Strings';
@@ -30,7 +29,6 @@ export default class AppInfo extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        {/* <HeaderNavigator {...this.props} /> */}
         <View style={styles.contentContainer}>
           <ImgButton
             buttonImage={true}
@@ -44,11 +42,11 @@ export default class AppInfo extends React.Component {
         <Text style={styles.versionStyle}>What's New?</Text>
         <View style={{ flexDirection: 'row' }}>
             <Text style={{ fontSize: 30 }}>{'\u2022'}</Text>
-            <Text style={{ paddingLeft: 5, paddingTop: 8, fontSize: Strings.textFontSize, fontFamily: Strings.textFontFamily }}>New feature added</Text>
+            <Text style={{ paddingLeft: 5, paddingTop: 8, fontSize: Strings.textFontSize, fontFamily: Strings.textFontFamily, color: Colors.grayColor }}>New feature added</Text>
           </View>
           <View style={{ flexDirection: 'row' }}>
             <Text style={{ fontSize: 30 }}>{'\u2022'}</Text>
-            <Text style={{ paddingLeft: 5, paddingTop: 8, fontSize: Strings.textFontSize, fontFamily: Strings.textFontFamily }}>Bug Fixes</Text>
+            <Text style={{ paddingLeft: 5, paddingTop: 8, fontSize: Strings.textFontSize, fontFamily: Strings.textFontFamily, color: Colors.grayColor }}>Bug Fixes</Text>
           </View>
           </View>
       </View>
