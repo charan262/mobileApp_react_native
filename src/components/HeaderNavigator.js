@@ -11,7 +11,7 @@ export default class HeaderNavigator extends React.Component {
                 justifyContent: 'flex-start',
                 alignItems: 'center'
             }}>
-                <TouchableHighlight style={{ marginLeft: 15, marginTop: 10 }}
+                <TouchableHighlight style={{ marginLeft: 15, marginTop: 0 }}
                     onPress={() => this.props.navigation.toggleDrawer()}>
                     <TabBarIcon
                         name={

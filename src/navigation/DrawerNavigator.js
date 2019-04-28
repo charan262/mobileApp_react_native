@@ -1,6 +1,6 @@
 import React from 'react';
 import { Platform, View, Text, Image, Alert } from 'react-native';
-import { createStackNavigator, createDrawerNavigator, DrawerItems, NavigationActions } from 'react-navigation';
+import { createStackNavigator, createDrawerNavigator, DrawerItems, NavigationActions, StackActions } from 'react-navigation';
 import TabBarIcon from '../components/TabBarIcon';
 
 import AppInfo from '../screens/AppInfo';
@@ -134,7 +134,7 @@ const DrawerContent = (props) => {
                             return;
                         }
                         console.log(props)
-                        Alert.alert('Alert Title', 'My Alert Msg', [{ text: 'OK', onPress: () => props.navigation.navigate('Auth')}])
+                        Alert.alert('Alert Title', 'My Alert Msg', [{ text: 'OK', onPress: () => props.navigation.navigate('Auth') }])
                     }
                 }
                  />
