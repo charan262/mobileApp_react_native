@@ -11,7 +11,6 @@ export default class ProfessionScreen extends React.Component {
   render() {
     return (
       <View style={{flex: 1}}>
-        <Card></Card>
         <TabNavigator navigation={this.props.navigation}/>
     </View>
     );
