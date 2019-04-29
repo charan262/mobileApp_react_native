@@ -94,17 +94,17 @@ export default createDrawerNavigator({
             ),
         }
     },
-    'Logout': {
-        screen: LogoutNavigator,
-        navigationOptions: {
-            drawerIcon: ({ focused }) => (
-                <TabBarIcon
-                    focused={focused}
-                    name={Platform.OS === 'ios' ? 'ios-text' : 'md-text'}
-                />
-            ),
-        }
-    }
+    // 'Logout': {
+    //     screen: LogoutNavigator,
+    //     navigationOptions: {
+    //         drawerIcon: ({ focused }) => (
+    //             <TabBarIcon
+    //                 focused={focused}
+    //                 name={Platform.OS === 'ios' ? 'ios-text' : 'md-text'}
+    //             />
+    //         ),
+    //     }
+    // }
 }, {
         initialRouteName: 'Home',
         contentComponent: props => <DrawerContent {...props} />,

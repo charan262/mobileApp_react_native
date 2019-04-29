@@ -1,32 +1,20 @@
 import React from 'react';
 import {
-  Image,
-  Platform,
-  ScrollView,
   StyleSheet,
   Text,
-  TouchableOpacity,
   View,
 } from 'react-native';
-import HeaderNavigator from '../components/HeaderNavigator';
 
-export default class ProfessionScreen extends React.Component {
+export default class Education extends React.Component {
 
-  componentWillUnmount(){
-    console.log('unmount-professional')
-  }
   render() {
     return (
-      <View style={{
-        flex: 1,
-        flexDirection: 'column',
-    }}>
+      <View style={{flex: 1}}>
         <View>
-          <Text>Hello this is Professional Screen</Text>
+          <Text>Educationto to be developed</Text>
         </View>
-
     </View>
-    );
+    )
   }
 }
 

@@ -1,4 +1,4 @@
-export const users = [
+export const features = [
    {
       key: '1',
       name: 'Camera',
@@ -9,19 +9,19 @@ export const users = [
       key: '2',
       name: 'Google Maps',
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg',
-      description:'Access Google map location from here'
+      description:'Access Google map location from here.'
    },
    {
       key: '3',
       name: 'Date Picker',
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg',
-      description:'Date Picker renders date and time picker'
+      description:'Date Picker renders date and time picker.'
    },
    {
       key: '4',
       name: 'Net Info',
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg',
-      description:'NetInfo exposes info about online/offline status'
+      description:'NetInfo exposes info about online/offline status.'
    },
    {
       key: '5',
@@ -69,6 +69,16 @@ export const users = [
       key: '12',
       name: 'Accessibility',
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg',
-      description:'It makes apps accessible to people with disabilities..'
+      description:'It makes apps accessible to people with disabilities.'
+   },
+   {
+      key: '13',
+      name: 'PDF Show',
+      avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg',
+      description:'It helps to open PDF document on mobile.'
    }
+]
+
+export const myData = [
+   
 ]

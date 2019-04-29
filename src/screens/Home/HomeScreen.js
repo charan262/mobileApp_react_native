@@ -14,7 +14,7 @@ import {
 import { currentGreeting } from '../../utils/timeFormat';
 import { withNavigationFocus } from 'react-navigation';
 import { Card, Button } from 'react-native-elements'
-import { users } from '../../constants/mockData';
+import { features } from '../../constants/mockData';
 import { SubHeaderText } from '../../components/SubHeaderText';
 import { NormalText } from '../../components/NormalText';
 import Colors from '../../constants/Colors';
@@ -33,9 +33,9 @@ class HomeScreen extends React.Component {
         flexDirection: 'column',
         backgroundColor: '#F5FFFA'
       }}>
-        <Card><SubHeaderText text='FEATURES - REACT NATIVE'/></Card>
+        <Card><SubHeaderText text='FEATURES IMPLEMENTED - REACT NATIVE'/></Card>
         <FlatList
-          data={users}
+          data={features}
           renderItem={({ item }) => {
             return (
               <Card title={item.name} key={item.key} containerStyle={{ backgroundColor: Colors.whiteColor }}>
