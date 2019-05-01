@@ -33,7 +33,7 @@ class HomeScreen extends React.Component {
         flexDirection: 'column',
         backgroundColor: '#F5FFFA'
       }}>
-        <Card><SubHeaderText text='FEATURES IMPLEMENTED - REACT NATIVE'/></Card>
+        {/* <Card><SubHeaderText text='FEATURES IMPLEMENTED - REACT NATIVE'/></Card> */}
         <FlatList
           data={features}
           renderItem={({ item }) => {

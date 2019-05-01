@@ -79,6 +79,21 @@ export const features = [
    }
 ]
 
-export const myData = [
-   
-]
+export const myData = {
+      skills:{
+        web:['HTML','CSS','jQuery', 'JavaScript', 'TypeScript', 'React','Angular', 'Redux'],
+        mobile: ['React Native', 'Ionic'],
+        serverSide:['Node js', 'Express js', 'Java', 'SpringBoot'],
+        libraries:['Bootstrap','D3 js', 'Moment', 'Lodash', 'Passport', 'Chart js'],
+        testingTools: ['Jasmine', 'Jest', 'Enzyme','Karma', 'Chai'],
+        methodologies: ['Agile'],
+        db:['Mongo Db','MySql','Oracle'],
+        buildTools: ['Webpack', 'Babel', 'Maven','Gradle']
+      },
+      experience:{
+
+      },
+      education:{
+
+      }
+}

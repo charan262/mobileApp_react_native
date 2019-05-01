@@ -6,6 +6,7 @@ import EXPERIENCE from '../screens/Professional/Experience';
 import EDUCATION from '../screens/Professional/Education';
 import Colors from '../constants/Colors';
 import Strings from '../constants/Strings';
+// import console = require('console');
 
 export const TabNavigator = createMaterialTopTabNavigator(
     {
@@ -13,18 +14,8 @@ export const TabNavigator = createMaterialTopTabNavigator(
       EXPERIENCE,
       EDUCATION
     }, {
-        navigationOptions: ({ navigation, screenProps }) => ({
-            header: null,
-            headerMode: 'none',
-            tabBarVisible: true,
-            tabBarLabel: () => {
-              const { routeName } = navigation.state;
-              switch (routeName) {
-                //
-              }
-              return <Text>{routeName}</Text>;
-            },
-          }),
+      initialRouteName:'SKILLS',
+      tabBarPosition:'top',
           animationEnabled: true,
           swipeEnabled: true,
           tabBarOptions: {
@@ -47,4 +38,5 @@ export const TabNavigator = createMaterialTopTabNavigator(
               }
         }
     }
+   
 )
