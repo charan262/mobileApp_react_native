@@ -1,26 +1,22 @@
 import React, { Component } from 'react';
 import { View, Animated } from 'react-native';
 
-export default class StickyTabs extends Component {
-
-  componentWillMount() {
-    this.offset = new Animated.Value(0)
-  }
-
-  render() {
-    const height = this.props.headerHeight
-    const header = this.props.headerComponent
-    const content = React.cloneElement(this.props.contentComponent, {
+const StickyTabs=(props)=>{
+    const offset = new Animated.Value(0)
+    const height = props.headerHeight
+    const header = props.headerComponent
+    const content = React.cloneElement(props.contentComponent, {
       screenProps: {
         headerHeight: height,
-        scrollY: this.offset,
+        scrollY: offset,
       },
     })
-    let translateY = Animated.diffClamp(this.offset,0,86)
+    let translateY = Animated.diffClamp(offset,0,height)
                       .interpolate({
                         inputRange: [0, height],
                         outputRange: [0, -height],
                       })
+                      console.log(translateY)
     return (
       <View style={{flex: 1}}>
         <Animated.View
@@ -49,6 +45,5 @@ export default class StickyTabs extends Component {
         </Animated.View>
       </View>
     )
-  }
-
 }
+export default StickyTabs

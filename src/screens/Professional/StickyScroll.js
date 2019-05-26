@@ -6,10 +6,10 @@ export default class StickyScroll extends Component {
   render() {
     let {scrollY, headerHeight} = this.props.screenProps
 
-    let onScroll = Animated.event(
-      [{nativeEvent: {contentOffset: { y: scrollY }}}],
-      { useNativeDriver: true }
-    )
+    // let onScroll = Animated.event(
+    //   [{nativeEvent: {contentOffset: { y: scrollY }}}],
+    //   { useNativeDriver: true }
+    // )
 
     const translateY = this.props.screenProps.scrollY.interpolate({
       inputRange:  [0, headerHeight],
@@ -19,7 +19,10 @@ export default class StickyScroll extends Component {
 
     return (
       <Animated.ScrollView
-        onScroll={onScroll}
+        onScroll={Animated.event(
+            [{nativeEvent: {contentOffset: { y: scrollY }}}],
+            { useNativeDriver: true }
+          )}
         scrollEventThrottle={16}
       >
         <Animated.View

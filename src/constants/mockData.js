@@ -80,20 +80,82 @@ export const features = [
 ]
 
 export const myData = {
-      skills:{
-        web:['HTML','CSS','jQuery', 'JavaScript', 'TypeScript', 'React','Angular', 'Redux'],
-        mobile: ['React Native', 'Ionic'],
-        serverSide:['Node js', 'Express js', 'Java', 'SpringBoot'],
-        libraries:['Bootstrap','D3 js', 'Moment', 'Lodash', 'Passport', 'Chart js'],
-        testingTools: ['Jasmine', 'Jest', 'Enzyme','Karma', 'Chai'],
-        methodologies: ['Agile'],
-        db:['Mongo Db','MySql','Oracle'],
-        buildTools: ['Webpack', 'Babel', 'Maven','Gradle']
+   skills: [
+      {
+         key: '1',
+         name: 'Web',
+         desc: 'HTML, CSS, jQuery, JavaScript, TypeScript, React, Angular, Redux'
       },
-      experience:{
-
+      {
+         key: '2',
+         name: 'Mobile',
+         desc: 'React Native, Ionic'
       },
-      education:{
-
+      {
+         key: '3',
+         name: 'ServerSide',
+         desc: 'Node js, Express js, Java, SpringBoot'
+      },
+      {
+         key: '4',
+         name: 'Libraries',
+         desc: 'Bootstrap, D3 js, Moment, Lodash, Passport, Chart js'
+      },
+      {
+         key: '5',
+         name: 'TestingTools',
+         desc: 'Jasmine, Jest, Enzyme, Karma, Chai'
+      },
+      {
+         key: '6',
+         name: 'Methodologies',
+         desc: 'Agile'
+      },
+      {
+         key: '7',
+         name: 'DB',
+         desc: 'Mongo Db, MySql, Oracle'
+      },
+      {
+         key: '8',
+         name: 'BuildTools',
+         desc: 'Webpack, Babel, Maven,Gradle'
       }
-}
+],
+      experince: [
+         {
+            key: '1',
+            position: 'SOFTWARE ENGINEER',
+            company: 'Walmart Inc',
+            duration: 'July 2018 - Present'
+         },
+         {
+            key: '2',
+            position: 'SOFTWARE DEVELOPER',
+            company: 'HYR GLOBAL SOURCE',
+            duration: 'Jan 2017 - July 2018'
+         },
+         {
+            key: '3',
+            position: 'SOFTWARE PROGRAMMER',
+            company: 'Vanqo Global Tech',
+            duration: 'Sep 2013 - Aug 2015'
+         }
+      ],
+      education: [
+         {
+            key: '1',
+            degree: 'Master of Science',
+            major: 'Computer Science',
+            college: 'University Of Central Missouri',
+            duration: '2016 - 2017'
+         },
+         {
+            key: '2',
+            degree: 'Bachelor of Technology',
+            major: 'Electrical and Electronics Engineering',
+            college: 'JNTU',
+            duration: '2009 - 2013'
+         }
+      ]
+   }
