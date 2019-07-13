@@ -125,19 +125,19 @@ export const myData = {
       experince: [
          {
             key: '1',
-            position: 'SOFTWARE ENGINEER',
+            position: 'Software Engineer',
             company: 'Walmart Inc',
             duration: 'July 2018 - Present'
          },
          {
             key: '2',
-            position: 'SOFTWARE DEVELOPER',
-            company: 'HYR GLOBAL SOURCE',
+            position: 'Software Developer',
+            company: 'HYR Global Source',
             duration: 'Jan 2017 - July 2018'
          },
          {
             key: '3',
-            position: 'SOFTWARE PROGRAMMER',
+            position: 'Software Programmer',
             company: 'Vanqo Global Tech',
             duration: 'Sep 2013 - Aug 2015'
          }
