@@ -11,8 +11,8 @@ import {
 
 
 // import { MonoText } from '../components/StyledText';
-import { currentGreeting } from '../utils/timeFormat';
-import HeaderNavigator from '../components/HeaderNavigator';
+import { currentGreeting } from '../../utils/timeFormat';
+import HeaderNavigator from '../../components/HeaderNavigator';
 
 export default class PersonalScreen extends React.Component {
 

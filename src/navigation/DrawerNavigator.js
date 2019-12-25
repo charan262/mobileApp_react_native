@@ -125,7 +125,7 @@ const DrawerContent = (props) => {
                     justifyContent: 'center',
                 }}>
                 <AvatarImg
-                    source={require('../constants/assets/charan.jpg')}
+                    source={require('../constants/assets/charanAnim.png')}
                     containerStyle={{ width: 80, height: 80 }}
                     showEdit = {true}
                     rounded = {true}

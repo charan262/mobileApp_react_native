@@ -5,7 +5,7 @@ import { createStackNavigator, createBottomTabNavigator, createSwitchNavigator }
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/Home/HomeScreen';
 import ProfessionScreen from '../screens/Professional/ProfessionScreen';
-import PersonalScreen from '../screens/PersonalScreen';
+import PersonalScreen from '../screens/Personal/PersonalScreen';
 import Colors from '../constants/Colors';
 
 const HomeStack = createStackNavigator({ Home: HomeScreen },
