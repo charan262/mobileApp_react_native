@@ -13,6 +13,7 @@ import com.microsoft.appcenter.reactnative.crashes.AppCenterReactNativeCrashesPa
 import com.microsoft.appcenter.reactnative.analytics.AppCenterReactNativeAnalyticsPackage;
 import com.microsoft.appcenter.reactnative.appcenter.AppCenterReactNativePackage;
 import org.reactnative.camera.RNCameraPackage;
+import com.microsoft.codepush.react.CodePush;
 
 import java.util.Arrays;
 import java.util.List;
@@ -34,7 +35,9 @@ public class MainApplication extends Application implements ReactApplication {
             new AppCenterReactNativeCrashesPackage(MainApplication.this, getResources().getString(R.string.appCenterCrashes_whenToSendCrashes)),
             new AppCenterReactNativeAnalyticsPackage(MainApplication.this, getResources().getString(R.string.appCenterAnalytics_whenToEnableAnalytics)),
             new AppCenterReactNativePackage(MainApplication.this),
-            new RNCameraPackage()
+            new RNCameraPackage(),
+            new CodePush("tezTJY6gzno-ofeMC2-r9sjYZIQfDz-iALu9G", MainApplication.this, BuildConfig.DEBUG, R.string.CodePushPublicKey)
+            
       );
     }
 
@@ -42,6 +45,11 @@ public class MainApplication extends Application implements ReactApplication {
     protected String getJSMainModuleName() {
       return "index";
     }
+
+    @Override
+     public String getJSBundleFile() {
+        return CodePush.getJSBundleFile();
+      }
   };
 
   @Override
