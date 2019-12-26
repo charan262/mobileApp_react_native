@@ -3,19 +3,19 @@ export const features = [
       key: '1',
       name: 'Camera',
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg',
-      description:'CameraRoll provides access to the local camera roll or photo library.'
+      description:'Try Camera functionality.'
    },
    {
       key: '2',
       name: 'Google Maps',
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg',
-      description:'Access Google map location from here.'
+      description:'Try Google Maps functionality.'
    },
    {
       key: '3',
       name: 'Date Picker',
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg',
-      description:'Date Picker renders date and time picker.'
+      description:'Try Date Picker functionality.'
    },
    {
       key: '4',

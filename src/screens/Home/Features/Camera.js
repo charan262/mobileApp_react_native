@@ -8,20 +8,43 @@ import {
   TouchableOpacity,
   View,
   Dimensions,
+  CameraRoll
 } from 'react-native';
 
 import { RNCamera } from 'react-native-camera';
-
+import Icon from 'react-native-vector-icons/Ionicons';
 
 class Camera extends PureComponent {
+  
+  state ={
+    cameraType: 'back'
+  }
 
   takePicture = async() => {
     if (this.camera) {
       const options = { quality: 0.5, base64: true };
       const data = await this.camera.takePictureAsync(options);
+      CameraRoll.saveToCameraRoll(data.uri, 'photo');
       console.log(data.uri);
     }
   };
+
+  cameraTypeHandler = () => {
+      let rotateCamera;
+      const cameraType = this.state.cameraType;
+      if (cameraType === "front") {
+        rotateCamera = "back";
+      }
+      if (cameraType === "back") {
+        rotateCamera = "front";
+      }
+      this.setState(prevState => {
+        return {
+          ...prevState,
+          cameraType: rotateCamera
+        };
+      });
+  }
   render() {
     const { width } = Dimensions.get('window')
     return (
@@ -31,7 +54,7 @@ class Camera extends PureComponent {
             this.camera = ref;
           }}
           style={styles.preview}
-          type={RNCamera.Constants.Type.back}
+          type={this.state.cameraType}
           flashMode={RNCamera.Constants.FlashMode.on}
           androidCameraPermissionOptions={{
             title: 'Permission to use camera',
@@ -48,9 +71,21 @@ class Camera extends PureComponent {
           }}
         />
         <View style={{ flex: 0, flexDirection: 'row', justifyContent: 'center' }}>
-          <TouchableOpacity onPress={this.takePicture.bind(this)} style={styles.capture}>
-            <Text style={{ fontSize: 14 }}> SNAP </Text>
-          </TouchableOpacity>
+        <Icon
+            name='md-camera'
+            size={40}
+            color={'#fff'}
+            style={styles.capture}
+            onPress={this.takePicture.bind(this)}
+            />
+          
+          <Icon
+            name='md-reverse-camera'
+            size={30}
+            color={'#fff'}
+            style={styles.cameraType}
+            onPress={this.cameraTypeHandler}
+             />
         </View>
         </View>
        
@@ -71,12 +106,15 @@ const styles = StyleSheet.create({
   },
   capture: {
     flex: 0,
-    backgroundColor: '#fff',
-    borderRadius: 5,
-    padding: 15,
-    paddingHorizontal: 20,
-    alignSelf: 'center',
+    padding:10,
+    alignItems: 'center',
     margin: 20,
+  },
+  cameraType: {
+    flex: 0,
+    padding:10,
+    alignItems: 'center',
+    margin: 25
   }
 });
 export default Camera;
