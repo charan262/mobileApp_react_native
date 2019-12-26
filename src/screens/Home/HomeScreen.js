@@ -25,8 +25,31 @@ class HomeScreen extends React.Component {
     msg: currentGreeting()
   }
 
+  onButtonPress = (name, navigate) => {
+    switch(name) {
+      case 'Camera':
+           return navigate('CameraScreen')
+      case 'Google Maps':
+         console.log('Hello Google Maps')
+         break;
+      case 'Date Picker':
+         console.log('Hello Picker')
+         break;
+      case 'Net Info':
+         console.log('Hello Ninfo')
+         break;
+      case 'Geo Location':
+         console.log('Hello Geo')
+         break;
+      default: 
+         console.log('nothing is clicked')
+      
+    }
+  }
+
   render() {
     const { width } = Dimensions.get('window')
+    const { navigate } = this.props.navigation
     return (
       <View style={{
         flex: 1,
@@ -42,8 +65,9 @@ class HomeScreen extends React.Component {
                 <NormalText text={item.description} />
                 <ImgButton
                   btnStyle={{ marginLeft: width*0.14, height: 40, margin: 10, backgroundColor: Colors.whiteColor }}
-                  buttonName='View Now'
+                  buttonName='Try Now'
                   btnTextStyle={{ color: Colors.tintColor }}
+                  onPress = { this.onButtonPress.bind(this, item.name, navigate) }
                    />
               </Card>
             )
