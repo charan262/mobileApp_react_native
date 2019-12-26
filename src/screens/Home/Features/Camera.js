@@ -13,6 +13,7 @@ import {
 
 import { RNCamera } from 'react-native-camera';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { BackButton } from '../../../components/BackButton';
 
 class Camera extends PureComponent {
   
@@ -28,6 +29,10 @@ class Camera extends PureComponent {
       console.log(data.uri);
     }
   };
+
+  backButtonPress = () => {
+    this.props.navigation.navigate('App')
+  }
 
   cameraTypeHandler = () => {
       let rotateCamera;
@@ -70,6 +75,7 @@ class Camera extends PureComponent {
             buttonNegative: 'Cancel',
           }}
         />
+         <BackButton color='#fff' onPress={this.backButtonPress}/>
         <View style={{ flex: 0, flexDirection: 'row', justifyContent: 'center' }}>
         <Icon
             name='md-camera'
