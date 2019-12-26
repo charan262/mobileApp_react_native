@@ -107,7 +107,7 @@ android {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 4
-        versionName "3.0"
+        versionName "19.12.3"
         missingDimensionStrategy 'react-native-camera', 'general'
     }
     signingConfigs {
