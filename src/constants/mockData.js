@@ -84,43 +84,34 @@ export const myData = {
       {
          key: '1',
          name: 'Web',
-         desc: 'HTML, CSS, jQuery, JavaScript, TypeScript, React, Angular, Redux'
+         desc: 'JavaScript, TypeScript, CSS, React, Angular, Redux, WebPack, Babel, Jasmine, Jest, Enzyme, Moment'
       },
       {
          key: '2',
          name: 'Mobile',
-         desc: 'React Native, Ionic'
+         desc: 'React Native, Ionic, Kotlin, VS App center, Code Push, Google Play, App Store'
       },
       {
          key: '3',
-         name: 'ServerSide',
-         desc: 'Node js, Express js, Java, SpringBoot'
+         name: 'Server',
+         desc: 'Node js, Express js, Java, SpringBoot, Maven, Gradle'
       },
       {
          key: '4',
-         name: 'Libraries',
-         desc: 'Bootstrap, D3 js, Moment, Lodash, Passport, Chart js'
+         name: 'Testing',
+         desc: 'Selenium, Cucumber, Karate, Gatling'
       },
       {
          key: '5',
-         name: 'TestingTools',
-         desc: 'Jasmine, Jest, Enzyme, Karma, Chai'
+         name: 'DevOps',
+         desc: 'Jenkins, Docker, Kubernetes, VS App Center'
       },
       {
          key: '6',
-         name: 'Methodologies',
-         desc: 'Agile'
-      },
-      {
-         key: '7',
-         name: 'DB',
-         desc: 'Mongo Db, MySql, Oracle'
-      },
-      {
-         key: '8',
-         name: 'BuildTools',
-         desc: 'Webpack, Babel, Maven,Gradle'
+         name: 'Cloud',
+         desc: 'VMs, Containers, Auto Scaling, Azure'
       }
+
 ],
       experince: [
          {
@@ -156,6 +147,27 @@ export const myData = {
             major: 'Electrical and Electronics Engineering',
             college: 'JNTU',
             duration: '2009 - 2013'
+         }
+      ],
+
+      resources: [
+         {
+            key: '1',
+            desc: 'CONTACT',
+            name: 'Charan Maddi',
+            email: 'charan.madhi@gmail.com',
+            phone: 'XXX-XXX-XXXX'
+         },
+         {
+            key: '2',
+            desc: 'SOCIAL MEDIA',
+            facebook: 'Charan Reddy',
+            linkedIn: 'Charan Maddi'  
+         },
+         {
+            key: '3',
+            desc: 'MORE',
+            github: 'charan262'
          }
       ]
    }

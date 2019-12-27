@@ -48,6 +48,6 @@ const styles = StyleSheet.create({
   },
   textStyle: {
     color: Colors.grayColor,
-    fontSize: 20
+    fontSize: 14
   }
 });

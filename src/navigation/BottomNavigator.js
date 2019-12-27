@@ -66,7 +66,7 @@ const PersonalStack = createStackNavigator({ Personal: PersonalScreen }, {
 });
 
 export default createBottomTabNavigator({
-  HomeStack,
+  // HomeStack,
   ProfessionStack,
   PersonalStack,
 });
