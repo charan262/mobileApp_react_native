@@ -13,10 +13,11 @@ import { Provider } from "react-redux";
 import { applyMiddleware,createStore } from 'redux';
 import thunk from "redux-thunk";
 import rootReducer from './redux/reducers';
+import codePush from "react-native-code-push";
 
 const store=createStore(rootReducer, applyMiddleware(thunk))
 
-export default class App extends Component {
+class App extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -42,3 +43,6 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
+
+const codePushOptions = { checkFrequency: codePush.CheckFrequency.ON_APP_START };
+export default codePush(codePushOptions)(App);

@@ -23,7 +23,7 @@ export default class PersonalScreen extends React.Component {
         flexDirection: 'column',
     }}>
         <View>
-          <Text>Hello this is Personal Screen</Text>
+          <Text>Hello this is Personal Screen and test again</Text>
         </View>
 
     </View>

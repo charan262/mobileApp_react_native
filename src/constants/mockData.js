@@ -3,13 +3,13 @@ export const features = [
       key: '1',
       name: 'Camera',
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg',
-      description:'Try Camera functionality.'
+      description:'Try Camera.'
    },
    {
       key: '2',
       name: 'Google Maps',
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg',
-      description:'Try Google Maps functionality.'
+      description:'Try Google.'
    },
    {
       key: '3',
