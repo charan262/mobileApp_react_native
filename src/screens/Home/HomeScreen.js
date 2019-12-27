@@ -30,8 +30,7 @@ class HomeScreen extends React.Component {
       case 'Camera':
            return navigate('CameraScreen')
       case 'Google Maps':
-         console.log('Hello Google Maps')
-         break;
+          return navigate('GoogleMaps')
       case 'Date Picker':
          console.log('Hello Picker')
          break;

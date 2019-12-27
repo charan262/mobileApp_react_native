@@ -14,6 +14,7 @@ import com.microsoft.appcenter.reactnative.analytics.AppCenterReactNativeAnalyti
 import com.microsoft.appcenter.reactnative.appcenter.AppCenterReactNativePackage;
 import org.reactnative.camera.RNCameraPackage;
 import com.microsoft.codepush.react.CodePush;
+import com.airbnb.android.react.maps.MapsPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -36,7 +37,8 @@ public class MainApplication extends Application implements ReactApplication {
             new AppCenterReactNativeAnalyticsPackage(MainApplication.this, getResources().getString(R.string.appCenterAnalytics_whenToEnableAnalytics)),
             new AppCenterReactNativePackage(MainApplication.this),
             new RNCameraPackage(),
-            new CodePush("tezTJY6gzno-ofeMC2-r9sjYZIQfDz-iALu9G", MainApplication.this, BuildConfig.DEBUG, R.string.CodePushPublicKey)
+            new CodePush("tezTJY6gzno-ofeMC2-r9sjYZIQfDz-iALu9G", MainApplication.this, BuildConfig.DEBUG, R.string.CodePushPublicKey),
+            new MapsPackage()
             
       );
     }
