@@ -50,11 +50,11 @@ const ProfessionStack = createStackNavigator({ Profession: ProfessionScreen }, {
 
 const PersonalStack = createStackNavigator({ Personal: PersonalScreen }, {
   navigationOptions : {
-    tabBarLabel: 'Personal',
+    tabBarLabel: 'Reach Me',
     tabBarIcon: ({ focused }) => (
       <TabBarIcon
         focused={focused}
-        name={Platform.OS === 'ios' ? 'ios-cafe' : 'md-cafe'}
+        name={Platform.OS === 'ios' ? 'ios-contact' : 'md-contact'}
       />
     ),
     tabBarOptions: {
