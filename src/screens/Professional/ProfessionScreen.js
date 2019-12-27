@@ -10,21 +10,20 @@ import {
   FlatList
 } from 'react-native';
 import { TabNavigator } from '../../navigation/TopTabNavigator';
-import Colors from '../../constants/Colors';
-import { AvatarImg } from '../../components/Avatar';
-import Strings from '../../constants/Strings';
 import  Header  from './Header';
-import StickyTabs from './StickyTabs';
 
 export default class ProfessionScreen extends React.Component {
   static router = TabNavigator.router;
   render() {
     return (
-      <StickyTabs
-        headerHeight={140}
-        headerComponent={<Header />}
-        contentComponent={<TabNavigator navigation={this.props.navigation} />}
-      />
+      <View style={{flex: 1}}>
+        <View style={{ width: '100%', height: 140, position: "absolute", top: 0,  overflow: "hidden" }}>
+            <Header/>
+        </View>
+        <View style={{ flex: 1,marginTop: 140,marginBottom: -140 }}>
+          <TabNavigator navigation={this.props.navigation}/>
+        </View>
+      </View>
     );
   }
 }

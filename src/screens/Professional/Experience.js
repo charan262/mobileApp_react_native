@@ -12,7 +12,6 @@ import {
   Animated
 } from 'react-native';
 import Colors from '../../constants/Colors';
-import StickyScroll from './StickyScroll';
 import { myData } from '../../constants/mockData';
 import Strings from '../../constants/Strings';
 import { Card } from 'react-native-elements';
@@ -20,8 +19,8 @@ import { Card } from 'react-native-elements';
 export default class Experience extends React.Component {
   render() {
     return (
-      <StickyScroll {...this.props}>
-        <View style={{ flex: 1 }}>
+      <ScrollView>
+        <View style={{ paddingBottom: 150 }}>
           <FlatList
             data={myData.experince}
             contentContainerStyle={{ marginTop: 0 }}
@@ -36,7 +35,7 @@ export default class Experience extends React.Component {
             }}
           />
         </View>
-      </StickyScroll>
+      </ScrollView>
     )
   }
 }

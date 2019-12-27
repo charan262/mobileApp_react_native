@@ -12,16 +12,14 @@ import {
   Animated
 } from 'react-native';
 import Colors from '../../constants/Colors';
-import StickyScroll from './StickyScroll';
 import { myData } from '../../constants/mockData';
-import Strings from '../../constants/Strings';
 import { Card } from 'react-native-elements';
 
 export default class Education extends React.Component {
   render() {
     return (
-      <StickyScroll {...this.props}>
-        <View style={{ flex: 1 }}>
+      <ScrollView>
+        <View style={{ paddingBottom: 150 }} >
           <FlatList
             data={myData.education}
             contentContainerStyle={{ marginTop: 0 }}
@@ -37,7 +35,7 @@ export default class Education extends React.Component {
             }}
           />
         </View>
-      </StickyScroll>
+      </ScrollView>
     )
   }
 }

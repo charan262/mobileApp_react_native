@@ -1,28 +1,21 @@
 import React from 'react';
 import {
-  Image,
-  Platform,
   ScrollView,
   StyleSheet,
   Text,
-  TouchableOpacity,
-  View,
-  TouchableHighlight,
   FlatList,
-  Animated
+  View
 } from 'react-native';
 import Colors from '../../constants/Colors';
-import StickyScroll from './StickyScroll';
 import { myData } from '../../constants/mockData';
-import Strings from '../../constants/Strings';
-import { NormalText } from '../../components/NormalText';
 import { Card } from 'react-native-elements';
 
 export default class Skills extends React.Component {
+  
   render() {
     return (
-      <StickyScroll {...this.props}>
-        <View style={{ flex: 1 }}>
+      <ScrollView>
+        <View style={{ paddingBottom: 150 }} >
           <FlatList
             data={myData.skills}
             contentContainerStyle={{ marginTop: 0 }}
@@ -36,7 +29,7 @@ export default class Skills extends React.Component {
             }}
           />
         </View>
-      </StickyScroll>
+       </ScrollView>
     )
   }
 }

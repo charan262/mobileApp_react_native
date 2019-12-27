@@ -131,7 +131,8 @@ const styles = StyleSheet.create({
   },
   backtextStyle: {
     color: Colors.tintColor,
-    fontSize: 20
+    fontSize: 20,
+    alignSelf:'stretch'
   },
   cardStyle:{
     position: "absolute",
