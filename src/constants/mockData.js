@@ -117,19 +117,19 @@ export const myData = {
          {
             key: '1',
             position: 'Software Engineer',
-            company: 'Walmart Inc',
+            company: 'Walmart Inc,USA',
             duration: 'July 2018 - Present'
          },
          {
             key: '2',
             position: 'Software Developer',
-            company: 'HYR Global Source',
+            company: 'HYR Global Source,USA',
             duration: 'Jan 2017 - July 2018'
          },
          {
             key: '3',
             position: 'Software Programmer',
-            company: 'Vanqo Global Tech',
+            company: 'Vanqo Global Tech,India',
             duration: 'Sep 2013 - Aug 2015'
          }
       ],
