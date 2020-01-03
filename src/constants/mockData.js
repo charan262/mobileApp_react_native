@@ -117,19 +117,19 @@ export const myData = {
          {
             key: '1',
             position: 'Software Engineer',
-            company: 'Walmart Inc,USA',
+            company: 'Walmart Inc,US',
             duration: 'July 2018 - Present'
          },
          {
             key: '2',
             position: 'Software Developer',
-            company: 'HYR Global Source,USA',
+            company: 'HYR Global Source,US',
             duration: 'Jan 2017 - July 2018'
          },
          {
             key: '3',
             position: 'Software Programmer',
-            company: 'Vanqo Global Tech,India',
+            company: 'Vanqo Global Tech,IN',
             duration: 'Sep 2013 - Aug 2015'
          }
       ],
@@ -138,13 +138,13 @@ export const myData = {
             key: '1',
             degree: 'Master of Science',
             major: 'Computer Science',
-            college: 'University Of Central Missouri',
+            college: 'University Of Central Missouri,US',
             duration: '2016 - 2017'
          },
          {
             key: '2',
             degree: 'Bachelor of Technology',
-            major: 'Electrical and Electronics Engineering',
+            major: 'Electrical and Electronics Engineering,IN',
             college: 'JNTU',
             duration: '2009 - 2013'
          }
