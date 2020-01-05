@@ -82,7 +82,6 @@ export default class PersonalScreen extends React.Component {
                          <View>
                          <Text style={[styles.backtextStyle, index == 0 && { paddingTop:20, paddingLeft:20}]}>{index == 0 && 'Name - '+ item.name}</Text>
                          <Text style={[styles.backtextStyle, index == 0 && { paddingLeft:20 }]}>{index == 0 && 'Email - '+ item.email}</Text>
-                         <Text style={[styles.backtextStyle, index == 0 && { paddingLeft:20 }]}>{index == 0 && 'Phone - '+ item.phone}</Text>
                          <Text style={[styles.backtextStyle, index == 1 && { paddingLeft:20, paddingTop:30, position:'absolute'}]}>{index == 1 && 'Facebook - '+ item.facebook}</Text>
                          <Text style={[styles.backtextStyle, index == 1 && { paddingLeft:20,paddingTop:55, position:'absolute'}]}>{index == 1 && 'LinkedIn - '+ item.linkedIn}</Text>
                          <Text style={[styles.backtextStyle, index == 2 && { paddingLeft:20, paddingTop:30, position:'absolute' }]}>{index == 2 && 'Github - '+ item.github}</Text>
